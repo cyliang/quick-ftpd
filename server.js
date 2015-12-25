@@ -1,22 +1,22 @@
 var ftpd = require('ftpd');
 var dns = require('dns');
+var os = require('os');
 
 var options = (function parseArg(argv) {
-	if (argv.length < 6) {
-		console.error('Usage: npm start <host> <port> <user> <password> [document_root]');
+	if (argv.length < 5) {
+		console.error('Usage: node server.js <port> <user> <password> [document_root]');
 		process.exit(1);
 	}
 
 	return {
-		host: argv[2],
-		port: argv[3],
-		user: argv[4],
-		password: argv[5],
-		root: process.cwd() + '/' + (argv[6] || 'doc_root')
+		port: argv[2],
+		user: argv[3],
+		password: argv[4],
+		root: argv[5] || 'doc_root'
 	};
 }(process.argv));
 
-dns.lookup(options.host, function(err, address, fam) {
+dns.lookup(os.hostname(), function(err, address, fam) {
 	if (err) {
 		console.error(err.message);
 		process.exit(1);
