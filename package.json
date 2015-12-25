@@ -1,0 +1,26 @@
+{
+  "name": "quick-ftpd",
+  "version": "1.0.0",
+  "description": "A quick ftpd that create a ftp server by one command.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyliang/quick-ftpd.git"
+  },
+  "keywords": [
+    "ftpd",
+    "ftp-server"
+  ],
+  "author": "Chih-Yung Liang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cyliang/quick-ftpd/issues"
+  },
+  "homepage": "https://github.com/cyliang/quick-ftpd#readme",
+  "dependencies": {
+    "ftpd": "^0.2.12"
+  }
+}
